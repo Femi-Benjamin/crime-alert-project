@@ -14,3 +14,25 @@ export const LogoIcon = () => {
         </svg>
     );
 };
+
+export const LeftChevronBtn = () => (
+    <svg
+        width="22"
+        height="35"
+        viewBox="0 0 22 35"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M20.4429 0H11.9998C5.37242 0 -0.000165939 5.37258 -0.000165939 12V22.6141C-0.000165939 29.2415 5.37242 34.6141 11.9998 34.6141H20.4429V0Z"
+            fill="#181818"
+        />
+        <path
+            d="M8.94291 22.8333L14.7762 17L8.94291 11.1666"
+            stroke="#9E9E9E"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </svg>
+);

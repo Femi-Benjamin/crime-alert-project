@@ -62,8 +62,43 @@ input[type="checkbox"] {
 input[type="submit"] {
   width: 100%;
   color: #fff;
-  background-color: #1a1a1a;
+  background-color: #4B4EFC;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+
+  /* identical to box height */
+
+  color: #181818;
+}
+
+
+@media (max-width: 1024px) {
+  .dashboard-layout {
+    grid-template-columns: 158px 1fr !important;
+  }
+
+  .link-item {
+    max-width: 24px !important;
+  }
+
+  .shrinker {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    grid-template-columns: 60px 1fr !important;
+  }
+
+  aside li {
+    gap: 8px !important;
+  }
 }

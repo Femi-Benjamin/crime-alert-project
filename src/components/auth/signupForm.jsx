@@ -1,8 +1,35 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LogoIcon } from "../svgs";
 
 const SignupForm = () => {
     const navigate = useNavigate();
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+    });
+
+    const inputFunc = (ev, formDataObj, setFormDataObj) => {
+        const name = ev.target.name;
+        const newValue = ev.target.value;
+        setFormDataObj({ ...formDataObj, [name]: newValue });
+    };
+
+    const handleInput = (ev) => inputFunc(ev, formData, setFormData);
+
+    const submitFunc = (ev) => {
+        ev.stopPropagation();
+    };
+
+    useEffect(() => {
+        console.log(formData);
+        if (formData.password === formData.confirmPassword) {
+            
+        }
+    }, [formData]);
 
     return (
         <div className="my-20 px-8">
@@ -13,41 +40,53 @@ const SignupForm = () => {
                 <h3 className="text-center font-bold text-2xl mb-8">
                     Create a new account
                 </h3>
-                <form action="" className="flex flex-col items-start">
+                <form
+                    action=""
+                    className="flex flex-col items-start"
+                    onSubmit={submitFunc}
+                >
                     <label htmlFor="">
                         Full Name
                         <input
                             type="text"
-                            name=""
                             id=""
                             placeholder="John Doe"
+                            name="fullName"
+                            onChange={handleInput}
+                            required
                         />
                     </label>
                     <label htmlFor="">
                         Email Address
                         <input
                             type="email"
-                            name=""
+                            name="email"
                             id=""
                             placeholder="Johndoe@report.crime"
+                            onChange={handleInput}
+                            required
                         />
                     </label>
                     <label htmlFor="">
                         Password
                         <input
                             type="password"
-                            name=""
+                            name="password"
                             id=""
                             placeholder="Create password"
+                            onChange={handleInput}
+                            required
                         />
                     </label>
                     <label htmlFor="">
                         Confirm Password
                         <input
                             type="password"
-                            name=""
+                            name="confirmPassword"
                             id=""
                             placeholder="Re-enter password"
+                            onChange={handleInput}
+                            required
                         />
                     </label>
                     <label htmlFor="">
