@@ -8,6 +8,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <Routes>
+                    <Route index element={<LoginPage />} />
                     <Route path="auth/login" element={<LoginPage />} />
                     <Route path="auth/signup" element={<SignupPage />} />
                     <Route path="dashboard">
